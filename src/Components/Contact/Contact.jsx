@@ -27,7 +27,7 @@ const [result, setResult] = React.useState("");
           const data = await response.json();
       
           if (data.success) {
-            setResult("Sent!!");
+            setResult("Email Sent!!");
             event.target.reset();
           } else {
             console.log("Error", data);
