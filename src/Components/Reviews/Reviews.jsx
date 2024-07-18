@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import './Reviews.css'
 import next_btn from '../../assets/nextt.png'
 import back_btn from '../../assets/backk.png'
@@ -6,9 +6,14 @@ import user_1 from '../../assets/user.png'
 import user_2 from '../../assets/user.png'
 import user_3 from '../../assets/user.png'
 import user_4 from '../../assets/user.png'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 
 const Reviews = () => {
+
+ 
+  
 
     const slider = useRef();
     let tx = 0;
@@ -27,8 +32,13 @@ const slideBackward = ()=>{
   slider.current.style.transform = `translateX(${tx}%)`;
 }
 
-     
 
+
+     
+useEffect(()=> {
+  Aos.init({ duration: 900 })
+
+}, [])
 
   return (
     <div className='reviews' id='reviews'>
@@ -36,7 +46,7 @@ const slideBackward = ()=>{
         <img src={back_btn} alt="" className='back-btn' onClick={slideBackward}/>
         <div className="slider">
           <ul ref={slider}>
-            <li>
+            <li data-aos="zoom-in">
               <div className="slide">
                 <div className="user-info">
                   <img src={user_1} alt="" />
@@ -49,7 +59,7 @@ const slideBackward = ()=>{
              </div>
             </li>
 
-            <li>
+            <li data-aos="zoom-in">
               <div className="slide">
                 <div className="user-info">
                   <img src={user_2} alt="" />
@@ -62,7 +72,7 @@ const slideBackward = ()=>{
              </div>
             </li>
 
-            <li>
+            <li data-aos="zoom-in">
               <div className="slide">
                 <div className="user-info">
                   <img src={user_3} alt="" />
@@ -75,7 +85,7 @@ const slideBackward = ()=>{
              </div>
             </li>
 
-            <li>
+            <li data-aos="zoom-in">
               <div className="slide">
                 <div className="user-info">
                   <img src={user_4} alt="" />

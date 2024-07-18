@@ -4,6 +4,31 @@ import mail_icon from '../../assets/mail.png'
 import phone_icon from '../../assets/phone.png'
 import location_icon from '../../assets/location.png'
 import './Contact.css'
+import { motion } from 'framer-motion'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import  { useEffect } from 'react'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 const Contact = () => {
@@ -36,22 +61,47 @@ const [result, setResult] = React.useState("");
         }
       
 
-
+        useEffect(()=> {
+          Aos.init({ duration: 2000})
+        }, [])
 
 
 
   return (
     <div className="contact" id='contact'>
-        <div className="contact-col">
-            <h3>Send us a message <img src={msm_icon} alt="" /></h3>
-            <p>Feel free to reach out through contact form or find our contact information below. Your feedback, questions, and suggestions are important to us as we strive to provide exceptional service to our university community</p>
-            <ul>
+        <div data-aos="fade-right"
+        
+        
+        className="contact-col">
+            <h3
+            
+
+            
+           
+            
+            
+            
+            
+            >Send us a message <img src={msm_icon} alt="" /></h3>
+            <p
+            
+            
+            >Feel free to reach out through contact form or find our contact information below. Your feedback, questions, and suggestions are important to us as we strive to provide exceptional service to our university community</p>
+            <ul 
+                      
+            
+            
+            >
                 <li><img src={mail_icon} alt="" />bettyshee2023@gmail.com</li>
                 <li><img src={phone_icon} alt="" />+254 729 776 569</li>
                 <li><img src={location_icon} alt="" />6th 4 Paramount Plaza House, Murang'a Road Off Kipande Road, Nairobi Starehe District, CBD. |P.O BOX 28417,00200. CITY SQUARE</li>
             </ul>
         </div>      
-        <div className="contact-col">
+        <div data-aos="fade-left"
+
+
+
+        className="contact-col">
             <form onSubmit={onSubmit}>
                 <label>Your Name</label>
                 <input type="text" name='name' placeholder='Enter your Name' required/>
